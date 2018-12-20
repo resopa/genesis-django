@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block menu %}
+  {% include 'core/includes/menu_proyectos.html'%}
+{% endblock %}
+
+{% block cuerpo %}
+<main role="main">
+  <div class="container mx-auto ">
+    <div class="row font_encabezado mb-3 mt-5">
+      <div class="col-1"></div>
+      <div class="col-5">
+        NUEVA PROPIEDAD: <b>{{nombre}}</b>&nbsp&nbsp<a href="{% url 'modelos:editar' modelo_id %}?aplicacion_id={{aplicacion_id}}">(atras)</a>
+      </div>
+    </div>
+<!--     <div class="row font_encabezado mb-3">
+      <div class="col-12">
+        NUEVA PROPIEDAD
+      </div>
+    </div> -->
+
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+          {% include 'core/includes/controles_propiedad.html'%}
+          {% include 'core/includes/parametrizacion_propiedad.html'%}
+          <!-- {{form.as_p}} -->
+          <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block mt-3" value="Grabar la Propiedad" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

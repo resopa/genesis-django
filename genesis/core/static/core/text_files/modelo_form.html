@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block menu %}
+	{% include 'core/includes/menu_@aplicacion.html'%}
+{% endblock %}
+
+{% block centro %}
+   	<style>
+    	.font_texto_titulo_pagina_@modelom{font-family:  @fonttextotitulopagina; font-size: @sizetextotitulopaginapt; font-weight: @boldtextotitulopagina;color:@colortextotitulopagina;}
+    	.font_label_@modelom{font-family:  @fontlabelmodelo; font-size: @sizelabelmodelopt; font-weight: @boldlabelmodelo;color:@colorlabelmodelo;}
+    	.color_error{color:red;}
+    </style>
+    <div class="container-fluid mt-5">
+    	<div class="row">
+    		<div class="col">
+    			<div class="container">
+    				<div class="row font_texto_titulo_pagina_@modelom mb-3">
+    					<div class="col-@numerocolumnasizquierdanuevo"></div>
+    					<div class="col-@numerocolumnasmodelonuevo">
+@referenciaform    					
+						</div>
+    					<div class="col-@numerocolumnasderechanuevo"></div>
+    				</div>
+    				<div class="row">
+    					<div class="col-@numerocolumnasizquierdanuevo"></div>
+    					<div class="col-@numerocolumnasmodelonuevo">
+					        <form action="" method="post" enctype="multipart/form-data">
+					        	{% csrf_token %}
+					            <div class="row">
+					              {% if form.non_field_errors %}
+					                <ol>
+					                  {% for error in form.non_field_errors %}
+					                    <li class="color_error"><strong>{{ error|escape }}</strong></li>
+					                  {% endfor %}
+					                </ol>
+					              {% endif %}
+					            </div>
+@controles
+					            <div class="text-center">
+					              <input type="submit" class="btn btn-primary btn-block mt-3" value="Grabar @modelo" />
+					            </div>
+					        </form>    						
+    					</div>
+    					<div class="col-@numerocolumnasderechanuevo"></div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+{% endblock %}
+

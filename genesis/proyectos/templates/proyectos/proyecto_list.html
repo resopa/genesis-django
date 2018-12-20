@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% block menu %}
+	{% include 'core/includes/menu_lista_proyectos.html'%}
+{% endblock %}
+
+{% block cuerpo %}
+
+<div class="container mt-5">
+	<div class="row mb-5 font_encabezado">
+		<div class="col-12 text-center">
+			LISTA DE PROYECTOS
+		</div>
+	</div>
+	<div class="row font_lista borde_inferior">
+		<div class="col-2">
+			<b>NOMBRE</b>
+		</div>
+		<div class="col-7">
+			<b>DESCRIPCION</b>
+		</div>
+		<div class="col-1">
+			<b>LOGO</b>
+		</div>
+	</div>
+	{% for proyecto in listaproyectos %}
+		<div class="row font_lista">
+			<div class="col-2">
+				{{proyecto.nombre}}
+			</div>
+<!-- 			<div class="col-1">
+				{{proyecto.usuario}}
+			</div> -->
+			<div class="col-6">
+				{{proyecto.descripcion.strip|safe}}
+			</div>
+			<div class="col-1">
+				{% if proyecto.avatar %}
+					<img src="{{proyecto.avatar.url}}" width="50px" height="50px" alt="">
+				{% endif %}
+			</div>
+			<div class="col-1">
+				<a href="{% url 'proyectos:listaarbol' proyecto.id %}" style="color:blue;">arbol</a>
+			</div>
+			<div class="col-1">
+				<a href="{% url 'proyectos:editar' proyecto.id %}" style="color:blue;">editar</a>
+			</div>
+			<div class="col-1">
+				<a href="{% url 'proyectos:borrar' proyecto.id %}" style="color:blue;">borrar</a>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+<!--  -->
+{% endblock %}
+

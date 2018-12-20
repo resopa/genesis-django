@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% block menu %}
+	{% include 'core/includes/menu_core.html'%}
+{% endblock %}
+
+{% block cuerpo %}
+	<!-- CUERPO -->
+	<div class="container mt-5">
+		<div class="row font_encabezado mb-3 text-center">
+			<div class="col-12">
+				CREAR PROYECTO
+			</div>
+		</div>
+		<div class="row ">
+			<div class="col-2">
+				{% block izquierda %}{% endblock %}
+			</div>
+			<div class="col-8 text-justify">
+				<div class="container font_lista">
+					<div class="row borde_inferior">
+						<div class="col-3">
+							PROYECTO
+						</div>
+						<div class="col-9">
+							DESCRIPCION
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							{{nombre}}
+						</div>
+						<div class="col-9">
+							{{descripcion|safe}}
+						</div>
+					</div>
+					<div class="row borde_superior">
+						<div class="col">
+							<a href="{% url 'crear:proyecto' %}?proyecto_id={{id}}">Crear Proyecto</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-2">
+				{% block derecha %}{% endblock %}
+			</div>
+		</div>	
+	</div>
+{% endblock %}

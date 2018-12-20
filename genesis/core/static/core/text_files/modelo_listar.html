@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block menu %}
+	{% include 'core/includes/menu_@aplicacion.html'%}
+{% endblock %}
+
+{% block centro %}
+   	<style>
+    	.font_titulo_lista_@modelom{font-family:  @fonttitulolista; font-size: @sizetitulolistapt; font-weight: @boldtitulolista;color:@colortitulolista;}
+    	.fondo_titulo_lista_@modelom{background-color: @colorfondotitulolista}
+    	.borde_inferior_lista_@modelom{border-bottom: 1pt solid @bordeinferiorlista;}
+    	.font_columnas_lista_@modelom{font-family: @fontcolumnaslista , Raleway; font-size: @sizecolumnaslistapt; font-weight: @boldcolumnaslista; color:@colorcolumnaslista;}
+    	.font_texto_lista_@modelom{font-family: @fonttextolista , Raleway; font-size: @sizetextolistapt; font-weight: @boldtextolista; color:@colortextolista;}
+    	.fondo_texto_lista_@modelom{background-color: @colorfondotextolista}
+    	.fondo_columnas_lista_@modelom{background-color: @colorfondocolumnaslista}
+    	.font_editar_@modelom{font-family: @fonteditarmodelo , Raleway; font-size: @sizeeditarmodelopt; font-weight: @boldeditarmodelo; color:@coloreditarmodelo;}
+    	.font_link_nuevo_@modelom{font-family: @fontlinknuevomodelo , Raleway; font-size: @sizelinknuevomodelopt; font-weight: @boldlinknuevomodelo; color:@colorlinknuevomodelo;}
+    	.alto_titulo_lista_@modelom{height: @altotitulolistapx;}
+    	.alto_columnas_lista_@modelom{height: @altocolumnaslistapx;}
+    </style>
+	<div class="container mt-5 border">
+		<div class="row mb-2 font_titulo_lista_@modelom fondo_titulo_lista_@modelom alto_titulo_lista_@modelom">
+			<div class="col-12 @justificaciontitulolista @justificacionverticaltitulolista">
+				@titulolista
+			</div>
+		</div>
+		<div class="row font_columnas_lista_@modelom borde_inferior_lista_@modelom fondo_columnas_lista_@modelom alto_columnas_lista_@modelom">
+@listatitulos			
+		</div>
+		{% for objeto in object_list %}
+			<div class="row fondo_texto_lista_@modelom font_texto_lista_@modelom">
+@listaregistros
+				<div class="col-1 mt-1">
+					<a class="font_editar_@modelom" href="{% url '@aplicacion:editar_@modelom' objeto.id %}" >@textoeditar</a>
+				</div>
+				<div class="col-1 mt-1">
+					<a class="font_editar_@modelom" href="{% url '@aplicacion:borrar_@modelom' objeto.id %}" >@textoborrar</a>
+				</div>
+			</div>
+		{% endfor %}
+		<div class="row font_lista borde_superior">
+		</div>
+	</div>
+	<div class="container mt-5">
+		<div class="row ml-1">
+			<a class="@linkboton font_link_nuevo_@modelom" href="{% url '@aplicacion:crear_@modelom' %}">@textolinknuevomodelo</a>
+		</div>
+	</div>	
+{% endblock %}
+

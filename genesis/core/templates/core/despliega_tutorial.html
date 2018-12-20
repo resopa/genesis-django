@@ -1,0 +1,88 @@
+{% extends 'core/base.html' %}
+{% block menu %}
+	{% include 'core/includes/menu_que_es_genesis.html'%}
+{% endblock %}
+
+{% block cuerpo %}
+
+<div class="container mt-5">
+	{% for item in lista %}
+		{% if item.4 == 'e' %}
+			<div class="row">
+				<div class="col ml-3 font_indice_tutorial">
+					<a href="#topico_e{{item.5}}">{{item.2}}&nbsp{{item.0}}</a>
+				</div>
+			</div>
+		{% else %}
+			<div class="row">
+				<div class="col ml-5 font_indice_tutorial">
+					<a href="#topico_d{{item.5}}">{{item.2}}&nbsp{{item.0}}</a>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
+<div class="container mt-5">
+	{% for item in lista %}
+		<div class="row font_lista">
+			<div class="col">
+				<div class="container">
+					{% if item.4 == 'e' %}
+						<div class="row"">
+							<div class="col-11 font_topico_tutorial">
+								<a name="topico_e{{item.5}}"></a>
+								{{item.0}}
+							</div>
+							<div class="col-1"><a href="#origen">(origen)</a></div>
+						</div>
+						<div class="row mt-2">
+							<div class="col font_decripcion_tutorial">
+								{{item.1|safe}}
+							</div>
+						</div>
+						<div style="height: 10px; border: 1pt solid transparent"></div>
+						{% if item.3 %}
+							<div style="height: 30px; border: 1pt solid transparent"></div>
+							<div class="row">
+								<div class="col text-center border">
+									<img src="{{item.3.url}}"  alt="">
+								</div>			
+							</div>		
+							<div style="height: 30px; border: 1pt solid transparent"></div>
+						{% endif %}
+					{% else %}
+						<div class="row mt-2">
+							<div class="col-1"></div>
+							<div class="col-10 font_topico_tutorial">
+								<a name="topico_d{{item.5}}"></a>
+								{{item.0}}
+							</div>
+							<div class="col-1"><a href="#origen">(origen)</a></div>
+						</div>
+						<div class="row mt-2">
+							<div class="col-1"></div>
+							<div class="col-11 font_decripcion_tutorial">
+								{{item.1|safe}}
+							</div>
+						</div>		
+						<div style="height: 20px; border: 1pt solid transparent"></div>
+						{% if item.3 %}
+							<div style="height: 30px; border: 1pt solid transparent"></div>
+							<div class="row">
+								<div class="col-1"></div>
+								<div class="col-11 text-center border">
+									<img src="{{item.3.url}}"  alt="">
+								</div>			
+							</div>
+							<div style="height: 30px; border: 1pt solid transparent"></div>
+						{% endif %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+</div>
+
+
+{% endblock %}

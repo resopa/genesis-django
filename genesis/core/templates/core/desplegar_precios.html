@@ -1,0 +1,353 @@
+{% extends 'core/base.html' %}
+{% block menu %}
+	{% include 'core/includes/menu_que_es_genesis.html'%}
+{% endblock %}
+
+{% block cuerpo %}
+
+<div class="container mt-5 ">
+	<div class="row mb-5">
+		<div class="col-3 ">
+			<div class="container border">
+				<div class="row mt-3">
+					<div class="col mr-1 ml-1 text-center font_titulo_precio bg-secondary">
+						Genesis Basico
+					</div>
+				</div>
+				<div class="row text-center text-secondary mt-2 font_texto_opcion_precio">
+					<div class="col ">
+						Uste puede utilizar sin ningun costo la version basica de Genesis y obtener prototipos de forma muy rapida y segura. Esta version maneja sus propios estilos y no permite cambios, pero la funcionalidad es identica a la dos versiones de pago, la diferencia solamente es la definicion de estilos.
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2 mb-3">
+					<div class="col font-weight-bold text-center">
+				        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+				            <div class="text-center">
+				              <input type="submit" class="btn btn-primary btn-block mt-3" value="Comenzar a utilizar" />
+				            </div>
+				        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="container border">
+				<div class="row mt-3">
+					<div class="col ml-1 mr-1 text-center font_titulo_precio bg-secondary">
+						Genesis Avanzado
+					</div>
+				</div>
+				<div class="row text-center text-secondary mt-2 font_texto_opcion_precio">
+					<div class="col ">
+						Esta version de Genesis tiene la misma funcionalidad que la version basica pero ademas de generar los prototipos funcionales, usted puede definir una gran variedad de propiedades para otorgarle a su disenio un aspecto muy profesional ya que es posible cambiar estilos del proyecto y cada uno de los modulos. Con esta opcion ademas es posible generar de forma automatica todo el sistema de autenticacion de usuarios para su aplicacion.
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2 ">
+					<div class="col font-weight-bold text-center">
+						opcion mensual
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio">
+						Pague una sola cuota por un mes.
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						18$
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col text-center">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="8QA6FDG8LNMQA">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2 ">
+					<div class="col font-weight-bold text-center ">
+						opcion trimestral
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio">
+						Usted paga por el uso de Genesis avanzado durante tres meses.
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						13$/mes
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col text-center">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="8QA6FDG8LNMQA">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2">
+					<div class="col font-weight-bold text-center ">
+						opcion anual
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio">
+						Usted paga por el uso de Genesis avanzado durante doce meses.
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						10$/mes
+					</div>
+				</div>
+				<div class="row mt-2 mb-2">
+					<div class="col text-center">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="8QA6FDG8LNMQA">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-3">
+						<div class="container border">
+				<div class="row mt-3">
+					<div class="col ml-1 mr-1 text-center  font_titulo_precio bg-secondary">
+						Genesis personalizado
+					</div>
+				</div>
+				<div class="row text-center text-secondary mt-2 font_texto_opcion_precio">
+					<div class="col ">
+						Esta version de Genesis es la version avanzada y la gran diferencia radica en la posibilidad de incorporar lineas de personalizacion en su aplicacion de manera de insertar su propio codigo y darle un alcance mucho mas personalizado a la funcionalidad global. Las opciones anteriores generan un codigo sin posibilidad de expansion pero esta opcion permite un ajuste muy fino sobre la version estatica pudiendo variar aspectos en toda la aplicacion.
+
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2 ">
+					<div class="col font-weight-bold text-center">
+						opcion mensual
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio">
+						Pague una sola cuota por un mes.
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						25$
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col text-center">
+
+<script type="text/javascript">
+function submitform()
+{
+    if(document.myform.onsubmit &&
+    !document.myform.onsubmit())
+    {
+    	alert('estoy aqui')
+        return;
+    }
+    	alert('estoy aqui')
+ document.myform.submit();
+}
+</script>						
+						<!-- <form action="" method="post" target="_top">{% csrf_token %}
+
+<input type="submit" class="btn btn-primary btn-block mt-3" value="Grabar el topico" />
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form> -->
+<!-- https://www.paypal.com/cgi-bin/webscr -->
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="5F74KJQZ24VGW">
+<INPUT TYPE="hidden" NAME="return" value="The-Page-On-Your-Site-To-Which-Buyer-Returns;">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+<!-- <form action="" submitform() method="post" target="_top" name="myform">{% csrf_token %}
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="text" name="hosted_button_id" value="XY9WYERPAJDZQ" id='boton'>
+<input type="hidden" name="shipping" value="1.00"> 
+<input type="hidden" name="secreto" value="111.00"> 
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+ -->
+
+
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2 ">
+					<div class="col font-weight-bold text-center ">
+						opcion trimestral
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio font_texto_opcion_precio">
+						Usted paga por el uso de Genesis durante tres meses.
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						17$/mes
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col text-center">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="8QA6FDG8LNMQA">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2">
+					<div class="col font-weight-bold text-center ">
+						opcion anual
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio font_texto_opcion_precio">
+						Usted paga por el uso de Genesis durante doce meses.
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						13$/mes
+					</div>
+				</div>
+				<div class="row mt-2 mb-2">
+					<div class="col text-center">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="8QA6FDG8LNMQA">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-3">
+			<div class="container border">
+				<div class="row mt-3">
+					<div class="col ml-1 mr-1 text-center font_titulo_precio bg-secondary">
+						Compra del producto
+					</div>
+				</div>
+				<div class="row text-center text-secondary mt-2">
+					<div class="col font_texto_opcion_precio">
+						Uste puede adquirir el codigo completo de cada una de las opciones y realizar todas las modificaciones que considere convenientes ya que se permite su utilizacion para cualquier aplicacion particular o comercial. Usted recibira asesoramiento a traves del foro durante un mes en todos sus requerimientos sobre el funcionamiento de Genesis y se atenderan errores de codigo o funcionales.
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2 ">
+					<div class="col font-weight-bold text-center">
+						Genesis Basico
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio">
+						Adquiera el codigo completo por:
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						120$
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col text-center">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="8QA6FDG8LNMQA">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2 ">
+					<div class="col font-weight-bold text-center ">
+						Genesis avanzado
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio font_texto_opcion_precio">
+						Adquiera el codigo completo de esta version por:
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						180$
+					</div>
+				</div>
+				<div class="row mt-2">
+					<div class="col text-center">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="8QA6FDG8LNMQA">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+				<div class="row mt-2 border-top"></div>
+				<div class="row mt-2">
+					<div class="col font-weight-bold text-center ">
+						Genesis personalizado
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col font_texto_opcion_precio font_texto_opcion_precio">
+						Adquiera el codigo completo de esta version por:
+					</div>
+				</div>
+				<div class="row mt-3 ">
+					<div class="col text-center font_precio">
+						250$
+					</div>
+				</div>
+				<div class="row mt-2 mb-2">
+					<div class="col text-center">
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="8QA6FDG8LNMQA">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

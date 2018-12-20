@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block titulo %}{% endblock %}</title>
+
+{% load static %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+
+    <!-- Estilos -->
+    <link href="{% static 'core/css/custom_ckeditor.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <!-- <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" > -->
+
+   	<style>
+    	.alto_menu{height: 60px;}
+    	.alto_encabezado{height: 140px;}
+    	.borde{border: 1pt solid lightgray;}
+    	.borde_inferior{border-bottom: 1pt solid lightgray;}
+    	.borde_superior{border-top: 1pt solid lightgray;}
+    	.label_pagina{font-family: Arial; font-weight: bold; font-size: 12pt;}
+    	.sub_titulo{color:gray; font-family: arial;font-size: 12pt;padding-left: 10px;font-weight: bold}
+    	.alto_ancho_imagen_logo{width: 120px;height: 120px}
+    	.alto_ancho_imagen_titulo{width: 600px;height: 100px}
+    	.alto_ancho_imagen_link_arbol{width: 100px;height: 100px}
+    	.alto_ancho_imagen_lista{width: 20px;height: 20px}
+    	.alto_ancho_imagen_arbol{width: 30px;height: 30px}
+    	.alto_ancho_imagen_aplicacion_arbol{width: 40px;height: 40px}
+    	.alto_ancho_imagen_profile{width: 150px;height: 150px}
+    	.font_titulo{font-family: Shrikhand , Raleway; font-size: 20pt}
+    	.font_encabezado{font-family:  Roboto; font-size: 16pt; font-weight: bold;color:brown;}
+    	.font_lista_hijos{font-family:  Roboto; font-size: 10pt; font-weight: bold;color:red;}
+    	.font_lista{font-family: Lora , Raleway; font-size: 10pt}
+    	.font_lista_libros{font-family: Lora , Raleway; font-size: 8pt}
+    	.font_hiper_link{font-family: Lora , Raleway; color: blue; font-size: 14pt; font-weight: bold;}
+    	.font_letrero{font-family: Lora , Raleway; font-size: 14pt; font-weight: bold; color:darkblue;}
+    	.font_proyecto_arbol{font-family: Lora ; font-size: 14pt; font-weight: bold; }
+    	.font_aplicacion_arbol{font-family: Lora ; font-size: 14pt; font-weight: bold; color:red; }
+    	.font_modelo_arbol{font-family: Lora ; font-size: 14pt; font-weight: bold; color:green; }
+    	.font_propiedad_arbol{font-family: Lora ; font-size: 14pt; font-weight: bold; color:darkblue; }
+    	.font_regla_arbol{font-family: Lora ; font-size: 14pt; font-weight: bold; color:orange; }
+    	.pt_5{padding-top: 5px;}
+    	.fondo_menu_core{background: red;}
+    	.font_topico_tutorial{font-family:  Roboto; font-size: 8pt; font-weight: bold;color:brown;}
+    	.font_descripcion_tutorial{font-family:  Roboto; font-size: 8pt; font-weight: 100;color:black;}
+    	.font_indice_tutorial{font-family:  arial; font-size: 10pt; font-weight: 600;color:black;}
+    	.font_precio{font-family:  arial; font-size: 28pt; font-weight: 400;color:red;}
+    	.font_texto_opcion_precio{font-family:  arial; font-size: 10pt; font-weight: 400;color:gray;}
+    	.font_titulo_precio{font-family:  roboto; font-size: 12pt; font-weight: 600;color:white;}
+    	a:hover{background-color: transparent;}
+    	.font_opcion_menu{font-family:  Roboto; font-size: 12pt; font-weight: bold;color:blue;}
+    </style>
+
+</head>
+<body>
+
+	<!-- Esta base comprende tres elementos de header
+		tres elementos de menu, profile y busqueda
+	tres elementos de content y un elemento de footer -->
+
+	<!-- HEADER -->
+	<!-- <div class="container ">
+		<div class="row ">
+			<div class="col-12 col-sm-6  col-md-3 d-none d-sm-block alto-header borde"></div>
+			<div class="col-12 col-sm-6  col-md-6 borde"></div>
+			<div class="col-12 col-sm-12 col-md-3  d-md-block borde"></div>
+		</div>	
+	</div> -->
+
+	<!-- LOGO Y TITULO -->
+	<div class="container-fluid alto_encabezado">
+		<div class="row mb-2 mt-3">
+			<div class="col-2"></div>
+			<div class="col-3 mb-2 borde_inferior">
+				<img class="alto_ancho_imagen_logo mb-2 " src="{% static 'core/img/logo.png' %}" alt="">
+			</div>
+			<div class="col-5 mb-2 font_titulo mt-4 text-center borde_inferior">
+				<img class="alto_ancho_imagen_titulo mb-2 " src="{% static 'core/img/GenesisLogo.png' %}" alt="">
+				
+			</div>
+			<div class="col-2"></div>
+		</div>
+	</div>
+
+	<div class="container-fluid mb-3 alto_menu ">
+		<div class="row alto_menu">
+			<div class="col-1"></div>
+			<div class="col-10">
+				{% block menu %}{% endblock %}
+			</div>
+			<div class="col-1"></div>
+		</div>
+	</div>
+
+	{% block cuerpo %}
+	{% endblock %}
+
+
+
+	<!-- FOOTER -->
+	<div class="container mt-2">
+		<div class="row alto-header">
+			<div class="col-12 d-none d-sm-block ">
+				{%block footer %}{% endblock %}
+			</div>
+		</div>	
+	</div>
+
+
+
+      <!-- Javascript -->
+      <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+      <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+</html>

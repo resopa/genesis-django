@@ -1,0 +1,96 @@
+{% extends 'core/base.html' %}
+{% load static %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<link href="{% static 'core/css/custom_ckeditor.css' %}" rel="stylesheet">
+
+{% block menu %}
+  {% include 'core/includes/menu_que_es_genesis.html'%}
+{% endblock %}
+
+{% block cuerpo %}
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-6">
+        <div class="container-fluid border rounded">
+          <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <div class="row font_encabezado mt-2 mb-4">
+              <div class="col-10">
+                TOPICO: <b style="color:red">{{nombre}}</b>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                {% if 'ok' in request.GET %}
+                  <p style="color:green;">
+                    Topico editado correctamente
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+            <div class="row">
+              {% if form.non_field_errors %}
+                <ol>
+                  {% for error in form.non_field_errors %}
+                    <li class="color_error"><strong>{{ error|escape }}</strong></li>
+                  {% endfor %}
+                </ol>
+              {% endif %}
+            </div>
+            {% include 'core/includes/controles_tutorialencabezado.html'%}
+            <div class="row mb-4">
+              <div class="col">
+                <div class="text-center">
+                  <input type="submit" class="btn btn-primary btn-block mt-3" value="Actualizar Topico" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-4 border rounded">
+        <div class="container-fluid">
+          <div class="row mt-2 mb-2 font-weight-bold">
+            LISTA DE TOPICOS DE DETALLE
+          </div>
+          <div class="row font_lista borde_inferior borde_superior font-weight-bold mb-2" style="background-color: #414141; color:white">
+            {% if numero > 0 %}
+                <div class="col-3">
+                  TOPICO
+                </div>
+                <div class="col-6">
+                  DESCRIPCION
+                </div>
+            {% endif %}
+          </div>
+          <div class="row  font_lista " style="background-color: #f1f1f1">
+            {% for detalle in listadetalle %}
+              <div class="col-3 ">
+                {{detalle.topico}}
+              </div>
+              <div class="col-6 ">
+                {{detalle.descripcion|safe}}
+              </div>
+              <div class="col-1">
+                <a href="{% url 'core:editar_tutorial_detalle' detalle.id %}?tutorialencabezado_id={{ tutorialencabezado.id }}&tutorialdetalle_id={{aplicacion.id}}">Editar</a>
+              </div>
+              <div class="col-1 ml-2">
+                <a href="{% url 'core:borrar_tutorial_detalle' detalle.id  %}?tutorialencabezado_id={{ tutorialencabezado.id }}&tutorialdetalle_id={{detalle.id}}">Borrar</a>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="row mt-3 font_lista font-weight-bold">
+            <div class="col">
+              <a class="btn btn-warning btn-block mt-2" style="color:black" href="{% url 'core:crear_tutorial_detalle'%}?tutorialencabezado_id={{ tutorialencabezado.id }}">Nuevo Topico detalle</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div>
+
+
+{% endblock %}

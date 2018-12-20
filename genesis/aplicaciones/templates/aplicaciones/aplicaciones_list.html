@@ -1,0 +1,36 @@
+{% extends 'core/home.html' %}
+{% load static %}
+{% block centro %}
+	<h1 class="text-center">LISTA DE APLICACIONES</h1>
+	<br>
+	<div class="container">
+		{% for aplicacion in aplicacionmodel_list|dictsort:"nombre" %}
+
+		<div class="row font_lista mt-2">
+			<div class="col-2">
+				{{aplicacion.nombre}}
+			</div>
+			<div class="col-4">
+				{{aplicacion.avatar.url}}
+			</div>
+			<div class="col-1">
+				<a href="{% url 'aplicaciones:update_aplicacion' aplicacion.id %}">Editar</a>
+			</div>
+			<div class="col-1">
+				<a href="{% url 'aplicaciones:delete_aplicacion' aplicacion.id  %}">Borrar</a>
+			</div>
+		</div>		
+
+		{% endfor %}
+	</div>
+
+{% endblock %}
+
+{% block izquierda%}
+<h3>LEFT</h3>
+{% endblock %}
+
+{% block derecha%}
+<h3>RIGHT</h3>
+{% endblock %}
+

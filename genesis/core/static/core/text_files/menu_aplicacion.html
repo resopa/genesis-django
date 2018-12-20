@@ -1,0 +1,24 @@
+	<style>
+	   	a:hover {font-weight: @boldhover; @colorhover}
+	</style>
+	<div class="container">
+		<div class="row " >
+			<div class="col">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-@colorfondomenu rounded alto_menu">
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+	          			<span class="navbar-toggler-icon"></span>
+	        		</button>
+					<a class="navbar-brand text-@coloropcionmenu font_opcion_menu_core d-lg-none" href="{%  url 'core:home' %}">@aplicacion</a>
+	  				<div class="collapse navbar-collapse" id="navbarResponsive">
+	              		<ul class="navbar-nav mr-auto">
+	            			<li class="nav-item  px-lg-4" >
+	              				<a class="nav-link text-@coloropcionmenu font_opcion_menu_core" href="{%  url 'core:home' %}">@inicio</a>
+	            			</li>
+@listamodelos	  					
+	          			</ul>
+<!-- seguridad -->
+	  				</div>
+				</nav>
+			</div>
+		</div>
+	</div>

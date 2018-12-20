@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% block menu %}
+	{% include 'core/includes/menu_que_es_genesis.html'%}
+{% endblock %}
+
+{% block cuerpo %}
+
+<div class="container mt-5">
+<!-- 	<div class="row mb-5 font_encabezado">
+		<div class="col-12 text-center">
+			GENESIS
+		</div>
+	</div> -->
+		<div class="row font_lista">
+			<div class="col-10">
+				{{genesis_real|safe}}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-10">
+				<a href="{% url 'core:home' %}">Tutorial</a>
+			</div>
+		</div>
+</div>
+<!--  -->
+{% endblock %}
