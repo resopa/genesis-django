@@ -1,0 +1,4 @@
+Pillow==5.0.0
+django==2.0.2
+ckeditor==5.4.0
+
